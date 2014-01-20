@@ -1,0 +1,18 @@
+
+.first
+{
+	height:300px;
+	width:300px;
+	margin-top:15px;
+	margin-left: 15px;
+	border:1px solid gray;
+
+}
+.second
+{
+height: 98px;
+width:98px;
+float: left;
+border:  1px solid gray;
+
+}
