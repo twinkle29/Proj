@@ -1,0 +1,15 @@
+.done-true
+{
+	text-decoration: line-through;
+	color: red;
+}
+.done-false
+{
+	font-weight: bold;
+	color:green;
+}
+.name
+{
+	font-weight: bold;
+	color:purple;
+}

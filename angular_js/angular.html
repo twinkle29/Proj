@@ -1,0 +1,32 @@
+<html ng-app>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	<script src="todo.js"></script>
+	<link rel="stylesheet" type="text/css" href="todo.css">
+	</head>
+	<body>
+		<div>
+			<label>Name:</label>
+			<input type="text" ng-model="yourName" placeholder="Enter your name here" />
+			<br>
+			<b>Hii </b><span class="name">{{yourName}}</span><b> !!</b>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div ng-controller="TodoCntrl">
+			{{remaining()}} of {{todos.length}} remaining
+			[<a href="" ng-click="archive()">archive</a>]
+			<ul>
+				<li ng-repeat="todo in todos">
+					<input type="checkbox" ng-model="todo.done">
+<span class="done-{{todo.done}}">{{todo.text}}</span>
+				</li>
+			</ul>
+			<form ng-submit="addTodos()">
+				<input type="text" placeholder="Enter todo here" ng-model="todoText">
+				<input type="submit" value="Add">
+							</form>
+					</div>
+	</body>
+</html>
