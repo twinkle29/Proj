@@ -1,8 +1,8 @@
-<html ng-app>
+<html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-	<script src="todo.js"></script>
-	<link rel="stylesheet" type="text/css" href="todo.css">
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div ng-app="myApp">
@@ -31,12 +31,23 @@
 					</div>
 					<hr>
 					<div ng-controller="AvengersCtrl">
+					<input type:"text" ng-model="search.name" placeholder="Search Name">  
+					<input type="text" ng-model="search.character" placeholder="Search Character">
+				
+					<br>
 						<table>
-							<tr ng-repeat="people in Avengers.cast">
-								<td>{{people.name}}</td><td>{{people.character}}</td>
+						<th>Name</th><th>Character</th>
+							<tr ng-repeat="people in avengers.cast|filter:search">
+								<td>{{people.name | lowercase}}</td><td>{{people.character | uppercase}}</td>
 							</tr>
 						</table>
 					</div>
+					<hr>
+					
 </div>
+</div>
+
+<powerpuff></powerpuff>
+  
 	</body>
 </html>
