@@ -1,3 +1,13 @@
+var myApp=angular.module('myApp',[]);
+myApp.factory('Avengers',function(){
+	var Avengers={};
+Avengers.cast=[{name:"xyz",character:"abc"},{name:"twinkle",character:"engineer"},{name:"aditi",character:"designer"}];
+	return Avengers;
+})
+function AvengersCtrl($scope,Avengers)
+{
+	$scope.avengers=Avengers;
+}
 function TodoCntrl($scope)
 {
 	$scope.todos=[{text:"Learn angularjs",done:true},{text:"build application",done:false}];
