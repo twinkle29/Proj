@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="utf-8">
+<title>My Cosmetic Store</title>
+<link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap.mini.css"  type="text/css"/>
+</head>
+<body>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	  <script src="js/bootstrap.js"></script>
+	  <script src="script.js"></script>
+	  <div class"container" ng-controller="ShampCtrl">
+	  <div class="headert">
+       Cosmetic Online 
+	  </div>
+	  <div class="navbar navbar-inverse">
+              
+                <div class="container">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="fragrances.html">Fragrances</a></li>
+                    <li><a href="haircare.html">Hair Care</a></li>
+                    <li><a href="skincare.html">Skin Care</a></li>
+                    
+                    <li><a href="contact.html">Contact us</a></li>
+                  </ul>
+                  
+                  <div class="navbar-form navbar-right" role="search">
+                  <input type="text" class="form-control" placeholder="Search" ng-model="search.name">
+                  </div>
+                  
+                    
+
+                </div>
+             
+            </div>
+            <div class="row">
+            <div ng-repeat="shamp in shampoo.brand|filter:search">
+              <div class="col-md-3">
+               <div class="thumbnail" style="margin-left:70px;margin-top:20px;margin-right:10px;margin-bottom:70px;">
+      <img src="images/oil.jpg"  style="min-height:100px;height:100px;" >
+      <div class="caption">
+        <h5>{{shamp.name|uppercase}}</h5>
+        <p>{{shamp.price}}</p>
+        <p><a href="#" class="btn btn-success" role="button">Add to Cart</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  
+            
+            
+            <div class="navbar navbar-inverse navbar-fixed-bottom" id="footert">
+Twinkle Copyright 2014
+            </div>
+	  </div>
+	</body>
+	</html>
