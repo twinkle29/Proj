@@ -5,8 +5,40 @@
 <title>My Cosmetic Store</title>
 <link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
 <link rel="stylesheet" href="css/bootstrap.mini.css"  type="text/css"/>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+    var sentence1="No,Thanx!!";
+    var sentence2="Feedback";
+  $("#feedbackpanel").click(function(){
+    
+    $("#feedback").fadeToggle("fast");
+    if( $("#feedbackpanel").text()==sentence1)
+    {
+    $("#feedbackpanel").text(sentence2);
+    $("#sideimage").css("height", "110px");
+    $("#secondside").show();
+    $("#thirdside").show();
+}
+else
+{
+  $("#feedbackpanel").text(sentence1);  
+  $("#sideimage").css("height", "400px");
+  $("#secondside").hide();
+    $("#thirdside").hide();
+  
+}
+
+    
+   
+  });
+
+});
+</script>
 </head>
 <body>
+
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
 	  <script src="js/bootstrap.js"></script>
@@ -35,21 +67,57 @@
             	<div class="col-md-3">
             		<div class="thumbnail" id="homethumb">
             			<h3 style="font-family: 'Comic Sans MS", cursive, sans-serif';">What's new???</h3>
+                        <br>
       <img src="images/perfume.jpg"  style="min-height:200px;height:200px;">
+      <br>
       <div class="caption" style="font-family: 'Comic Sans MS", cursive, sans-serif';'>
         
         <p>The new RED perfume is a mixture of fragrant essential oils or aroma compounds, fixatives and solvents used to give the human body, animals, food, objects, and living spaces "a pleasant scent."[1] Perfumes have been known to exist in some of the earliest human civilizations, either through ancient texts or from archaeological digs. Modern perfumery began in the late 19th century with the commercial synthesis of aroma compounds such as vanillin or coumarin.</p>
-        <p><a href="fragrances.html" class="btn btn-success" role="button">Buy !!</a></p>
+        <br>
+        <p><a href="fragrances.html" class="btn btn-danger" role="button">Buy !!</a></p>
       </div>
     </div>
             	</div>
-            	<div class="col-md-7">
+            	<div class="col-md-6">
             		<img src="images/Cosmetics.jpg" id="homeimage"></img>
             	</div>
-            	<div class="col-md-2">
- <img src="images/glitter.jpg" id="sideimage"></img>
+                <div class="col-md-3" id="thirdcolumn">
+            	<div id="sideimage">
+                   <div id="feedbackpanel" class="btn btn-danger">Feedback</div>
+                    <div id="feedback">
+                    <form name="feedbackform">
+ <textarea placeholder="Please provide Feedback.." rows="10" cols="30" style="margin-top:30px;border:2px solid black;">
+</textarea>
+<br>
+<br>
 
+<input type="submit" class="btn btn-danger"></input>
+</form>
 </div>
+</div>
+</div>
+<div id="secondside">
+    <center>
+    <br>
+    Find out which color suits your skin type!!
+    <br>
+    <br><br>
+    
+    
+    <a href="#" class="btn btn-danger" role="button">Let's Go!</a>
+    </center>
+    </div>
+    <div id="thirdside">
+        <center>
+    <br>
+    Follow us on Twitter!!!
+    <br>
+    <br><br>
+    
+    
+    <a href="#" class="btn btn-danger" role="button" >Let's Go!</a>
+    </center>
+    </div>
             	
             </div>
             <div class="navbar navbar-inverse navbar-fixed-bottom" id="footert">

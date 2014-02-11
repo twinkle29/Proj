@@ -1,7 +1,7 @@
 var myApp=angular.module("myapp",[]);
 myApp.factory("Frag",function(){
 	var Frag={};
-Frag.brand=[{name:"cyan",price:"Rs.1000"},{name:"xyz",price:"Rs.1000"},{name:"magenta",price:"Rs.1000"},{name:"black",price:"Rs.1000"},{name:"green",price:"Rs.1000"},{name:"red",price:"Rs.1000"},{name:"purple",price:"Rs.1000"},{name:"yellow",price:"Rs.1000"},{name:"neon",price:"Rs.1000"}];
+Frag.brand=[{name:"cyan",price:"Rs.1000",quantity:6},{name:"xyz",price:"Rs.1000",quantity:4},{name:"magenta",price:"Rs.1000",quantity:5},{name:"black",price:"Rs.1000",quantity:3},{name:"green",price:"Rs.1000",quantity:9},{name:"red",price:"Rs.1000",quantity:2},{name:"purple",price:"Rs.1000",quantity:1},{name:"yellow",price:"Rs.1000",quantity:11},{name:"neon",price:"Rs.1000",quantity:4}];
 	return Frag;
 });
 function FragCtrl($scope,Frag)
