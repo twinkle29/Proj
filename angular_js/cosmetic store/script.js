@@ -8,11 +8,13 @@ function FragCtrl($scope,Frag)
 {
 	$scope.frag=Frag;
 }
+		
 myApp.factory("Shampoo",function(){
 	var Shampoo={};
 Shampoo.brand=[{name:"rose",price:"Rs.1000"},{name:"tulip",price:"Rs.1000"},{name:"lily",price:"Rs.1000"},{name:"Sunflower",price:"Rs.1000"},{name:"Blue bell",price:"Rs.1000"},{name:"Buttercup",price:"Rs.1000"},{name:"Daisy",price:"Rs.1000"},{name:"Daffodil",price:"Rs.1000"},{name:"Primrose",price:"Rs.1000"}];
 	return Shampoo;
 });
+
 function ShampCtrl($scope,Shampoo)
 {
 	$scope.shampoo=Shampoo;
@@ -25,5 +27,46 @@ Cream.brand=[{name:"Caramel",price:"Rs.1000"},{name:"Chocolate",price:"Rs.1000"}
 function SkinCtrl($scope,Cream)
 {
 	$scope.cream=Cream;
+}
+
+
+
+
+myApp.service("Reviews",function(){
+	var Reviews=[{name:"Twinkle", rev:"Good"},{name:"asd",rev:"asd"}];
+	this.addReviewFact=function(rv)
+	{	
+		var newRev=[{name:rv.name,rev:rv.rev}];
+		Reviews.push(newRev);
+
+
+	}
+	this.list=function() {
+		
+		return Reviews;
+	}
+
+	/* Reviews.brand=[{name:"Twinkle",rev:"very good"}];
+	
+		addReviewFact: function(valn,valr){
+         
+          Reviews.brand.push({name:valn,rev:valr});
+          return Reviews;
+    */    
+      
+    });
+function reviewCtrl($scope,Reviews)
+{	
+	$scope.reviews=Reviews.list();
+	
+	$scope.addReview=function(){
+		alert("contro reviews");
+		var newRev=[{name:$scope.newReview.name,rev:$scope.newReview.rev}];
+		
+		Reviews.addReviewFact(newRev);
+		$scope.newReview={};
+	
+		
+	};
 }
 

@@ -43,6 +43,7 @@ function TodoCntrl($scope)
 {
 	$scope.todos=[{text:"Learn angularjs",done:true},{text:"build application",done:false}];
 	$scope.addTodos=function(){
+    alert("inside!");
 		$scope.todos.push({text:$scope.todoText,done:false});
 		$scope.todoText='';
 	};

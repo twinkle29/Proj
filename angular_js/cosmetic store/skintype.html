@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="utf-8">
+<title>My Cosmetic Store</title>
+<link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap.mini.css"  type="text/css"/>
+</head>
+<body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+    
+  $("#first").mouseenter(function(){
+    
+    $("#first").animate({width:'600px'});
+    $("#firstcolor").show();
+
+    
+   
+  });
+  $("#first").mouseleave(function(){
+    
+    $("#first").animate({width:'400px'});
+    $("#firstcolor").hide();
+
+    
+   
+  });
+   $("#second").mouseenter(function(){
+    
+    $("#second").animate({width:'600px'});
+    $("#secondcolor").show();
+
+    
+   
+  });
+  $("#second").mouseleave(function(){
+    
+    $("#second").animate({width:'400px'});
+    $("#secondcolor").hide();
+
+    
+   
+  });
+   $("#third").mouseenter(function(){
+    
+    $("#third").animate({width:'600px'});
+    $("#thirdcolor").show();
+
+    
+   
+  });
+  $("#third").mouseleave(function(){
+    
+    $("#third").animate({width:'400px'});
+    $("#thirdcolor").hide();
+
+    
+   
+  });
+   $("#fourth").mouseenter(function(){
+    
+    $("#fourth").animate({width:'600px'});
+    $("#fourthcolor").show();
+
+    
+   
+  });
+  $("#fourth").mouseleave(function(){
+    
+    $("#fourth").animate({width:'400px'});
+    $("#fourthcolor").hide();
+
+    
+   
+  });
+   
+    
+  
+   
+
+});
+</script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	  <script src="js/bootstrap.js"></script>
+	  <script src="script.js"></script>
+	  <div class"container" ng-controller="FragCtrl">
+	  <div class="headert">
+       Cosmetic Online 
+	  </div>
+	  <div class="navbar navbar-inverse">
+              
+                <div class="container">
+                  <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fragrances.html">Fragrances</a></li>
+                    <li><a href="haircare.html">Hair Care</a></li>
+                    <li><a href="skincare.html">Skin Care</a></li>
+                    
+                    <li><a href="contact.html">Contact us</a></li>
+                  </ul>
+                  
+                
+                  
+                    
+
+                </div>
+             
+            </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4 style="margin-left:55px;">What's your skin tone?</h4>
+              <div id="first" style="background-color:  #F0B6A2;height:50px;width:400px;margin-left:50px;margin-top:10px;"></div>
+               <div id="second" style="background-color:#EBA087;height:50px;width:400px;margin-left:50px;margin-top:10px;"></div>
+                <div id="third" style="background-color:#E9967A;height:50px;width:400px;margin-left:50px;margin-top:10px;"></div>
+                 <div id="fourth" style="background-color:#BA7862;height:50px;width:400px;margin-left:50px;margin-top:10px;"></div>
+            </div>
+            <div class="col-md-6">
+              
+              <div id="firstcolor" style="background-color:#E62E00;display:none;height:50px;width:300px;margin-top:40px;"></div>
+               <div id="secondcolor" style="background-color:#FF4719;display:none;height:50px;width:300px;margin-top:99px;"></div>
+                <div id="thirdcolor" style="background-color:#FF8566;display:none;height:50px;width:300px;margin-top:160px;"></div>
+                 <div id="fourthcolor" style="background-color:#FF9980;display:none;height:50px;width:300px;margin-top:219px;"></div>
+            </div>
+          </div>
+            
+            <div class="navbar navbar-inverse navbar-fixed-bottom" id="footert">
+Twinkle Copyright 2014
+            </div>
+	  </div>
+	</body>
+	</html>

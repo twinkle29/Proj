@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myapp">
 <head>
 <meta charset="utf-8">
 <title>My Cosmetic Store</title>
@@ -10,7 +10,7 @@
 <script> 
 $(document).ready(function(){
     var sentence1="No,Thanx!!";
-    var sentence2="Feedback";
+    var sentence2="Review Us";
   $("#feedbackpanel").click(function(){
     
     $("#feedback").fadeToggle("fast");
@@ -79,32 +79,84 @@ else
     </div>
             	</div>
             	<div class="col-md-6">
-            		<img src="images/Cosmetics.jpg" id="homeimage"></img>
+            		<!-- <img src="images/Cosmetics.jpg" id="homeimage"></img> -->
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+ 
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+ 
+  <!-- Slider Content (Wrapper for slides )-->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/Cosmetics.jpg" alt="..." id="homeimage">
+
+    
+    </div>
+    <div class="item">
+      <img src="images/cosmetics2.jpg" alt="..." id="homeimage">
+      
+    
+    </div>
+    <div class="item">
+      <img src="images/cosmetics3.jpg" alt="..." id="homeimage">
+      
+    
+    </div>
+    <div class="item">
+      <img src="images/cosmetic4.jpg" alt="..." id="homeimage">
+      
+    
+    </div>
+   
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
             	</div>
                 <div class="col-md-3" id="thirdcolumn">
             	<div id="sideimage">
-                   <div id="feedbackpanel" class="btn btn-danger">Feedback</div>
-                    <div id="feedback">
-                    <form name="feedbackform">
- <textarea placeholder="Please provide Feedback.." rows="10" cols="30" style="margin-top:30px;border:2px solid black;">
+                   <div id="feedbackpanel" class="btn btn-danger">Review Us</div>
+                    <div id="feedback"  ng-controller="reviewCtrl">
+                    <form ng-submit="addReview()">
+                      <input type="text" style="margin-top:30px;border:2px solid black;width:203px;" placeholder="Your Name.." ng-model="newReview.name">
+ <textarea placeholder="Please give us a review.." rows="9" cols="30" style="margin-top:30px;border:2px solid black;" ng-model="newReview.rev">
 </textarea>
 <br>
 <br>
 
-<input type="submit" class="btn btn-danger"></input>
+<input type="submit" class="btn btn-danger" value="Submit">
+
 </form>
 </div>
+<br>
+<br>
+<center>
+<a href="reviewPage.html">View Reviews</a>
+
+</center>
 </div>
+
 </div>
 <div id="secondside">
     <center>
     <br>
-    Find out which color suits your skin type!!
+    Find out which color suits your skin tone!!
     <br>
     <br><br>
     
     
-    <a href="#" class="btn btn-danger" role="button">Let's Go!</a>
+    <a href="skintype.html" class="btn btn-danger" role="button">Let's Go!</a>
     </center>
     </div>
     <div id="thirdside">
