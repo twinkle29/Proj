@@ -7,6 +7,12 @@ Frag.brand=[{name:"cyan",price:"Rs.1000",quantity:6},{name:"xyz",price:"Rs.1000"
 function FragCtrl($scope,Frag)
 {
 	$scope.frag=Frag;
+	
+	$scope.viewFrag=function(val){
+    alert("inside viewfrag!");
+		$scope.newFrag=val;
+		
+	};
 }
 		
 myApp.factory("Shampoo",function(){
@@ -32,41 +38,28 @@ function SkinCtrl($scope,Cream)
 
 
 
-myApp.service("Reviews",function(){
-	var Reviews=[{name:"Twinkle", rev:"Good"},{name:"asd",rev:"asd"}];
-	this.addReviewFact=function(rv)
-	{	
-		var newRev=[{name:rv.name,rev:rv.rev}];
-		Reviews.push(newRev);
 
 
-	}
-	this.list=function() {
-		
-		return Reviews;
-	}
-
-	/* Reviews.brand=[{name:"Twinkle",rev:"very good"}];
-	
-		addReviewFact: function(valn,valr){
-         
-          Reviews.brand.push({name:valn,rev:valr});
-          return Reviews;
-    */    
-      
-    });
-function reviewCtrl($scope,Reviews)
+function reviewCtrl($scope)
 {	
-	$scope.reviews=Reviews.list();
+	$scope.reviews=[{name:"Twinkle",rev:"Veryy good!"}];
+	if(typeof(Storage)!=="undefined")
+  {
+ localStorage.setItem("reviewList", $scope.reviews);
+  }
+else
+  {
+  alert("Sorry! No Web Storage support..");
+  }
 	
 	$scope.addReview=function(){
-		alert("contro reviews");
-		var newRev=[{name:$scope.newReview.name,rev:$scope.newReview.rev}];
 		
-		Reviews.addReviewFact(newRev);
-		$scope.newReview={};
-	
+			
 		
-	};
+		
+		$scope.reviews.push({name:$scope.yourName,rev:$scope.yourRev});
+		$scope.yourName='';
+		$scope.yourRev='';
+		
 }
-
+}

@@ -18,8 +18,10 @@ $(document).ready(function(){
     {
     $("#feedbackpanel").text(sentence2);
     $("#sideimage").css("height", "110px");
+    $("#reviewSide").hide();
     $("#secondside").show();
     $("#thirdside").show();
+
 }
 else
 {
@@ -27,6 +29,7 @@ else
   $("#sideimage").css("height", "400px");
   $("#secondside").hide();
     $("#thirdside").hide();
+    $("#reviewSide").show();
   
 }
 
@@ -43,7 +46,7 @@ else
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
 	  <script src="js/bootstrap.js"></script>
 	  <script src="script.js"></script>
-	  <div class"container">
+	  <div class"container"   ng-controller="reviewCtrl">
 	  <div class="headert">
        Cosmetic Online 
 	  </div>
@@ -127,10 +130,10 @@ else
                 <div class="col-md-3" id="thirdcolumn">
             	<div id="sideimage">
                    <div id="feedbackpanel" class="btn btn-danger">Review Us</div>
-                    <div id="feedback"  ng-controller="reviewCtrl">
+                    <div id="feedback">
                     <form ng-submit="addReview()">
-                      <input type="text" style="margin-top:30px;border:2px solid black;width:203px;" placeholder="Your Name.." ng-model="newReview.name">
- <textarea placeholder="Please give us a review.." rows="9" cols="30" style="margin-top:30px;border:2px solid black;" ng-model="newReview.rev">
+                      <input type="text" style="margin-top:30px;border:2px solid black;width:203px;" placeholder="Your Name.." ng-model="yourName">
+ <textarea placeholder="Please give us a review.." rows="9" cols="30" style="margin-top:30px;border:2px solid black;" ng-model="yourRev">
 </textarea>
 <br>
 <br>
@@ -138,16 +141,28 @@ else
 <input type="submit" class="btn btn-danger" value="Submit">
 
 </form>
+
 </div>
 <br>
 <br>
-<center>
+<!-- <center>
 <a href="reviewPage.html">View Reviews</a>
 
 </center>
+ -->
 </div>
 
 </div>
+<div id="reviewSide" style="display:none;border:1px solid black;
+  width: 230px;margin-top:410px;margin-left: 1050px;">
+   <ul>
+        <li ng-repeat="item in reviews">
+         <span><b>{{item.name}} :</b></span>
+         <br>
+         <span>{{item.rev}}</span>
+        </li>
+      </ul>
+  </div>
 <div id="secondside">
     <center>
     <br>

@@ -28,7 +28,7 @@
                   </ul>
                   
                   <div class="navbar-form navbar-right" role="search">
-                  <input type="text" class="form-control" placeholder="Search" ng-model="search.name">
+                  <input type="text" class="form-control" placeholder="Search" ng-model="search.name" value="cyan">
                   </div>
                   
                     
@@ -45,12 +45,13 @@
       <div class="caption">
         <h5>{{frag.name|uppercase}}</h5>
         <p>{{frag.price}}</p>
-        <p><a href="view.html" class="btn btn-danger" role="button" ng-click="viewFrag()">Add to Cart</a></p>
+        <p><a href="view.html" class="btn btn-danger" role="button" ng-click="viewFrag(frag)">Add to Cart</a></p>
       </div>
     </div>
   </div>
 </div>
 </div>
+
   
             
             
