@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+<meta charset="utf-8">
+<title>My Cosmetic Store</title>
+<link rel="stylesheet" href="../css/bootstrap.css"  type="text/css"/>
+<link rel="stylesheet" href="../css/bootstrap.min.css"  type="text/css"/>
+</head>
+<body>
+
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../script.js"></script>
+	  <div class"container"  ng-controller="expCtrl">
+	  <div class="headert">
+       Cosmetic Online 
+	  </div>
+	  <div class="navbar navbar-inverse">
+              
+                <div class="container">
+                  <ul class="nav navbar-nav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../fragrances.html">Fragrances</a></li>
+                    <li><a href="../haircare.html">Hair Care</a></li>
+                    <li><a href="../skincare.html">Skin Care</a></li>
+                    
+                    <li><a href="../contact.html">Contact us</a></li>
+                  </ul>
+                  
+                
+                  
+                    
+
+                </div>
+             
+            </div>
+         <ul>
+        <li ng-repeat="item in Reviews">
+         <span><b>{{item.name}} :</b></span>
+         <br>
+         <span>{{item.rev}}</span>
+        </li>
+      </ul>
+
+
+            <div class="navbar navbar-inverse navbar-fixed-bottom" id="footert">
+Twinkle Copyright 2014
+            </div>
+	  </div>
+	</body>
+	</html>

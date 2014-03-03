@@ -37,29 +37,48 @@ function SkinCtrl($scope,Cream)
 
 
 
-
-
-
-function reviewCtrl($scope)
-{	
-	$scope.reviews=[{name:"Twinkle",rev:"Veryy good!"}];
-	if(typeof(Storage)!=="undefined")
-  {
- localStorage.setItem("reviewList", $scope.reviews);
-  }
-else
-  {
-  alert("Sorry! No Web Storage support..");
-  }
+myApp.service("Reviews",function(){
+	var Reviews=[{name:"Twinkle", rev:"Good"}];
+	this.addReviewFact=function(n,r)
+	{	alert("inside add review");
 	
-	$scope.addReview=function(){
+		Reviews.push({name:n,rev:r});
+
+
+	};
+	this.list=function() {
 		
-			
-		
-		
-		$scope.reviews.push({name:$scope.yourName,rev:$scope.yourRev});
-		$scope.yourName='';
-		$scope.yourRev='';
-		
-}
-}
+		return Reviews;
+	};
+});
+
+myApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+	templateUrl: 'index.html',
+	controller: 'expCtrl'
+      }).
+      when('/reviewPage', {
+	templateUrl: 'templates/reviewPage.html',
+	controller: 'expCtrl'
+      }).
+    otherwise({
+	redirectTo: '/AddNewOrder'
+      });
+}]);
+
+
+myApp.controller("expCtrl",function($scope,Reviews)
+{	/*var Reviews=[{yourName:"Akshay",yourRev:"Good"},{yourName:"asd",yourRev:"Good"}];
+	$scope.Reviews=Reviews;*/
+	
+	$scope.Reviews=Reviews.list();
+	$scope.addReview=function(){ 
+	alert("hi")
+	Reviews.addReviewFact($scope.Name,$scope.Rev);
+	
+	
+	};
+});
+	

@@ -1,0 +1,160 @@
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+    var sentence1="No,Thanx!!";
+    var sentence2="Review Us";
+  $("#feedbackpanel").click(function(){
+    
+    $("#feedback").fadeToggle("fast");
+    if( $("#feedbackpanel").text()==sentence1)
+    {
+    $("#feedbackpanel").text(sentence2);
+    $("#sideimage").css("height", "110px");
+    $("#reviewSide").hide();
+    $("#secondside").show();
+    $("#thirdside").show();
+
+}
+else
+{
+  $("#feedbackpanel").text(sentence1);  
+  $("#sideimage").css("height", "400px");
+  $("#secondside").hide();
+    $("#thirdside").hide();
+    $("#reviewSide").show();
+  
+}
+
+    
+   
+  });
+
+});
+</script>
+
+ <div class="row">
+            	<div class="col-md-3">
+            		<div class="thumbnail" id="homethumb">
+            			<center>
+                    <h1 id="secondHeading">Featured Article 
+                    
+                    </h1>
+                  </center>
+                        <br>
+      <img src="img/merc.jpg"  style="min-height:200px;height:200px;">
+      <br>
+      <div class="caption" style="font-family: 'Comic Sans MS", cursive, sans-serif';'>
+        <h4><b>Mercedes launches latest model!</b></h4>
+        <p>The W169 is constructed with high-strength steel alloys with bonded joints. It has a large number of airbags including optional rear side airbags (for side-impacts in the backseats), optional side-curtain airbags, and standard head and thorax-protection side airbags. </p>
+        <br>
+        <p><a href="fragrances.html" class="btn btn-primary" role="button">Read Article</a></p>
+      </div>
+    </div>
+            	</div>
+
+              <div class="col-md-6">
+                <!-- <img src="images/Cosmetics.jpg" id="homeimage"></img> -->
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+ 
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+ 
+  <!-- Slider Content (Wrapper for slides )-->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/merc.jpg" alt="..." id="homeimage">
+
+    
+    </div>
+    <div class="item">
+      <img src="img/merc.jpg" alt="..." id="homeimage">
+      
+    
+    </div>
+    <div class="item">
+      <img src="img/sketch.jpg" alt="..." id="homeimage">
+      
+    
+    </div>
+    <div class="item">
+      <img src="img/merc.jpg" alt="..." id="homeimage">
+      
+    
+    </div>
+   
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+              </div>
+                    <div class="col-md-3" id="thirdcolumn">
+
+              <div id="sideimage" ng-controller="expCtrl" >
+                <div id="feedbackpanel" class="btn btn-primary">Review Us</div>
+                    <div id="feedback">
+                                            <div ng-repeat="tp in Reviews">
+  </div>
+
+                     <form ng-submit="addReview()">
+                      <input type="text" style="margin-top:30px;border:2px solid black;width:203px;" placeholder="Your Name.." ng-model="Name">
+ <textarea placeholder="Please give us a review.." rows="9" cols="30" style="margin-top:30px;border:2px solid black;" ng-model="Rev">
+</textarea>
+<br>
+<br>
+
+<input type="submit" class="btn btn-primary" value="Submit">
+
+</form> 
+   
+        
+        
+
+</div>
+
+<br>
+<br>
+<center>
+<a href="partials/reviewPage.html">View Reviews</a>
+
+</center>
+ 
+</div>
+
+</div>
+ 
+<div id="secondside">
+    <center>
+    <br>
+    Find out which color suits your skin tone!!
+    <br>
+    <br><br>
+    
+    
+    <a href="skintype.html" class="btn btn-primary" role="button">Let's Go!</a>
+    </center>
+    </div>
+    <div id="thirdside">
+        <center>
+    <br>
+    Follow us on Twitter!!!
+    <br>
+    <br><br>
+    
+    
+    <a href="#" class="btn btn-primary" role="button" >Let's Go!</a>
+    </center>
+    </div>
+            </div>
+           

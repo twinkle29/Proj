@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>My Cosmetic Store</title>
 <link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
-<link rel="stylesheet" href="css/bootstrap.mini.css"  type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css"/>
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script> 
@@ -43,10 +43,10 @@ else
 <body>
 
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	<script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 	  <script src="js/bootstrap.js"></script>
 	  <script src="script.js"></script>
-	  <div class"container"   ng-controller="reviewCtrl">
+	  <div class"container">
 	  <div class="headert">
        Cosmetic Online 
 	  </div>
@@ -128,41 +128,40 @@ else
 </div>
             	</div>
                 <div class="col-md-3" id="thirdcolumn">
-            	<div id="sideimage">
-                   <div id="feedbackpanel" class="btn btn-danger">Review Us</div>
+
+            	<div id="sideimage" ng-controller="expCtrl" >
+                <div id="feedbackpanel" class="btn btn-danger">Review Us</div>
                     <div id="feedback">
-                    <form ng-submit="addReview()">
-                      <input type="text" style="margin-top:30px;border:2px solid black;width:203px;" placeholder="Your Name.." ng-model="yourName">
- <textarea placeholder="Please give us a review.." rows="9" cols="30" style="margin-top:30px;border:2px solid black;" ng-model="yourRev">
+                                            <div ng-repeat="tp in Reviews">
+  </div>
+
+                     <form ng-submit="addReview()">
+                      <input type="text" style="margin-top:30px;border:2px solid black;width:203px;" placeholder="Your Name.." ng-model="Name">
+ <textarea placeholder="Please give us a review.." rows="9" cols="30" style="margin-top:30px;border:2px solid black;" ng-model="Rev">
 </textarea>
 <br>
 <br>
 
 <input type="submit" class="btn btn-danger" value="Submit">
 
-</form>
+</form> 
+   
+        
+        
 
 </div>
+
 <br>
 <br>
-<!-- <center>
-<a href="reviewPage.html">View Reviews</a>
+<center>
+<a href="templates/reviewPage.html">View Reviews</a>
 
 </center>
- -->
+ 
 </div>
 
 </div>
-<div id="reviewSide" style="display:none;border:1px solid black;
-  width: 230px;margin-top:410px;margin-left: 1050px;">
-   <ul>
-        <li ng-repeat="item in reviews">
-         <span><b>{{item.name}} :</b></span>
-         <br>
-         <span>{{item.rev}}</span>
-        </li>
-      </ul>
-  </div>
+ 
 <div id="secondside">
     <center>
     <br>
